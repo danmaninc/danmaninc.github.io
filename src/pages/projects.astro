@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+---
+
+<Layout title="danmaninc">
+    <main>
+        <div class="persona-left">
+            <h1>Daniil Nikulin</h1>
+            <h2>Web-developer</h2>
+        </div>
+        <div class="projects">
+            {projects.map(p => (
+                <ProjectCard
+                    title={p.data.title}
+                    description={p.data.shortDescription}
+                    thumbnailPath={p.data.thumbnail}
+                    link={p.data.link}
+                />
+            ))}
+        </div>
+    </main>
+</Layout>
+<style>
+    .persona-left {
+        margin: 2.5rem;
+    }
+    .persona-left h1 {
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+    .persona-left h2 {
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .projects {
+        display: flex;
+        flex-direction: flex-row;
+        justify-content: center;
+        gap: 2.5rem;
+        margin: 2.5rem;
+    }
+</style>
