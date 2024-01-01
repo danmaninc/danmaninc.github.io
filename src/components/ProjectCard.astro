@@ -1,0 +1,35 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    thumbnailPath: string;
+    link: string;
+}
+
+const { title, description, thumbnailPath, link } = Astro.props;
+---
+
+
+<div class="project">
+    <div class="project-thumbnail"/>
+    <div class="project-info">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <a href={link}>{link}</a>
+    </div>
+</div>
+<style> 
+    .project {
+        background-color: #ffffff1a;
+        border-radius: 25px;
+        padding: 0 1.25rem;
+    }
+    .project-info {
+        color: white;
+        margin: 1rem 0;
+    }
+    .project-info a {
+        font-weight: 500;
+        color: #42aaff;
+    }
+</style>
