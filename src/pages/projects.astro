@@ -15,6 +15,7 @@ const projects = await getCollection('projects');
         <div class="projects">
             {projects.map(p => (
                 <ProjectCard
+                    slug={p.slug}
                     title={p.data.title}
                     description={p.data.shortDescription}
                     thumbnailPath={p.data.thumbnail}

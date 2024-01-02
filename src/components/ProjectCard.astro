@@ -1,32 +1,57 @@
 ---
 interface Props {
+    slug: string;
     title: string;
     description: string;
     thumbnailPath: string;
     link: string;
 }
 
-const { title, description, thumbnailPath, link } = Astro.props;
+const { slug, title, description, thumbnailPath, link } = Astro.props;
 ---
 
 
 <div class="project">
-    <div class="project-thumbnail"/>
+    <div class="project-thumbnail">
+        <a href=`/projects/${slug}`>
+            <img src={thumbnailPath}>
+        </a>
+    </div>
     <div class="project-info">
         <h3>{title}</h3>
         <p>{description}</p>
-        <a href={link}>{link}</a>
+        <a href=`https://${link}`>{link}</a>
     </div>
 </div>
 <style> 
     .project {
         background-color: #ffffff1a;
         border-radius: 25px;
-        padding: 0 1.25rem;
+        width: 25rem;
+        height: 22.5rem;
+    }
+    .project-thumbnail: {
+        margin: 0;
+    }
+    .project-thumbnail img {
+        width: 100%;
+        height: 50%;
+        border-radius: 25px 25px 0 0;
     }
     .project-info {
         color: white;
+        padding: 0 1.25rem;
         margin: 1rem 0;
+    }
+    .project-info p {
+        display: -webkit-box;
+        height: 2.5rem;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .project-info h3 {
+        margin: 0;
     }
     .project-info a {
         font-weight: 500;
