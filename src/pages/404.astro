@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Link from '../components/Link.astro';
+---
+
+<Layout title="404 - danmaninc">
+    <main>
+        <div class="not-found">
+            <h1>404</h1>
+            <h2>A requested page not found.</h2>
+            <ul role="list" class="actions-list">
+                <Link 
+                    href="/"
+                    title="go home"
+                />
+            </ul>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+        color: white;
+    }
+    .not-found {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+    h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+    .actions-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0;
+    }
+
+</style>
