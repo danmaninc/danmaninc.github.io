@@ -13,9 +13,7 @@ const { slug, title, description, thumbnailPath, link } = Astro.props;
 
 <div class="project">
     <div class="project-thumbnail">
-        <a href=`/projects/${slug}`>
-            <img src={thumbnailPath}>
-        </a>
+        <img src={thumbnailPath}>
     </div>
     <div class="project-info">
         <h3>{title}</h3>
