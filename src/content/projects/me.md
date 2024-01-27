@@ -1,6 +1,6 @@
 ---
 title: "me"
-shortDescription: "A personal website about my projects. Here you can find contacts or download CV."
+shortDescription: "My personal website where you can read about my projects."
 description: "Some very-very-very long Portfolio description"
 thumbnail: "../../projects/me.png"
 link: "youtube.com/watch?v=xvFZjo5PgG0"
