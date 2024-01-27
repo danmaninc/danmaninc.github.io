@@ -9,8 +9,11 @@ const projects = await getCollection('projects');
 <Layout title="danmaninc">
     <main>
         <div class="persona-left">
-            <h1>Daniil Nikulin</h1>
-            <h2>Web-developer</h2>
+            <img src="../../avatar.jpg">
+            <div class="persona-headings">
+                <h1>Daniil Nikulin</h1>
+                <h2>Web-developer</h2>
+            </div>
         </div>
         <div class="projects">
             {projects.map(p => (
@@ -27,18 +30,30 @@ const projects = await getCollection('projects');
 </Layout>
 <style>
     .persona-left {
+        display: flex;
+        flex-direction: row;
         margin: 2.5rem;
     }
-    .persona-left h1 {
+    .persona-left img {
+		display: flex;
+		width: 7.5rem;
+		height: 7.5rem;
+		border-radius: 100px;
+    }
+    .persona-headings {
+        margin: 0 2.5rem;
+    }
+    .persona-headings h1 {
         color: white;
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 0.75rem;
     }
-    .persona-left h2 {
+    .persona-headings h2 {
         color: white;
         font-size: 1rem;
         font-weight: 600;
+        margin-top: 0rem;
     }
     .projects {
         display: flex;
